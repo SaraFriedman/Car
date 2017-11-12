@@ -22,7 +22,7 @@ Car::~Car()
 {
 }
 
-char * Car::GetCompany()
+const char * Car::GetCompany() const
 {
 	return m_Company;
 }
@@ -33,7 +33,7 @@ void Car::SetCompany(char * _company)
 	strncpy_s(m_Company, _company, 10);
 }
 
-char * Car::GetModel()
+const char * Car::GetModel() const
 {
 	return m_Model;
 }
@@ -44,7 +44,7 @@ void Car::SetModel(char * _model)
 	strncpy_s(m_Model, _model, 10);
 }
 
-unsigned int Car::GetYear()
+const unsigned int Car::GetYear() const
 {
 	return m_Year;
 }
@@ -55,7 +55,7 @@ void Car::SetYear(unsigned int _year)
 	m_Year = _year;
 }
 
-unsigned int Car::GetVolume()
+const unsigned int Car::GetVolume() const
 {
 	return m_Volume;
 }
@@ -65,7 +65,7 @@ void Car::SetVolume(unsigned int _volume)
 	m_Volume = _volume;
 }
 
-char * Car::GetColor()
+const char * Car::GetColor() const
 {
 	return m_Color;
 }
@@ -76,7 +76,7 @@ void Car::SetColor(char * _color)
 	strncpy_s(m_Color, _color, 10);
 }
 
-void Car::Print()
+void Car::Print() const
 {
 	cout << "Company: " << m_Company << endl
 		<< "Model: " << m_Model << endl
@@ -85,12 +85,12 @@ void Car::Print()
 		<< "Year: " << m_Year << endl;
 }
 
-Car & Car::CompareByYear(Car & c1, Car & c2)
+const Car & Car::CompareByYear(const Car & c1, const Car & c2) 
 {
 	return c1.GetYear() > c2.GetYear() ? c1 : c2;
 }
 
-Car & Car::CompareByVolume(Car & c1, Car & c2)
+const Car & Car::CompareByVolume(const Car & c1, const Car & c2)
 {
 	return c1.GetVolume() > c2.GetVolume() ? c1 : c2;
 }

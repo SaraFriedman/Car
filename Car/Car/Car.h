@@ -11,18 +11,18 @@ private:
 public:
 	Car(char* _company, char* _model, unsigned int _year, unsigned int _volume, char* _colo);
 	~Car();
-	char* GetCompany();
+	const char* GetCompany() const;
 	void SetCompany(char*);
-	char* GetModel();
+	const char* GetModel() const;
 	void SetModel(char*);
-	unsigned int GetYear();
+	const unsigned int GetYear() const;
 	void SetYear(unsigned int);
-	unsigned int GetVolume();
+	const unsigned int GetVolume() const;
 	void SetVolume(unsigned int);
-	char* GetColor();
+	const char* GetColor() const;
 	void SetColor(char*);
-	void Print();
-	static Car& CompareByYear(Car& c1, Car& c2);
-	static Car& CompareByVolume(Car& c1, Car& c2);
+	void Print() const;
+	const static Car& CompareByYear(const Car& c1, const Car& c2);
+	const static Car& CompareByVolume(const Car& c1, const Car& c2);
 };
 
